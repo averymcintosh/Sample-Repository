@@ -15,3 +15,5 @@ abline(lmrandom)
 
 #summary of the estimated model
 summary(lmrandom)
+
+#TEST: edit 1 from online, not my own computer...
