@@ -1,0 +1,17 @@
+#This generates random plots for random X & Y
+
+#random x values, with y = x + e, 
+#where 'e'  is a normal random variable centered at x, with high variance:
+x<-c(seq(0,40), sample(seq(0,40),60, replace=TRUE) )
+y<- -20+x+rnorm(101,0,10)
+
+#now X and dependent Y have been generated
+#and since I created them, I know that the true values of beta.0 and beta.1 are (20, 1), respectively.
+
+lmrandom<-lm(y ~ x) #fit the linear model
+#plot the data
+plot(y~x,col="red", pch="×", main=expression(paste("Random linear (normal) data with ",beta[0], " = -20")))
+abline(lmrandom)
+
+#summary of the estimated model
+summary(lmrandom)
